@@ -1,0 +1,25 @@
+
+def user_input():
+    name = [input(f"Enter name {i + 1}: ") for i in range(5)]
+    numbers = [int(input(f"Enter number {i + 1}: ")) for i in range(5)]
+    return name, numbers
+def create_dict(name, numbers):
+    d_data = {}
+    for i in range(len(name)):
+        d_data[name[i]] = numbers[i]
+    return d_data
+
+def sort_by_val(name, numbers):
+    data = list(zip(name, numbers))
+    data.sort(key=lambda x: x[1])
+    return data
+
+
+if __name__ == "__main__":
+    name, numbers = user_input()
+
+    d_data = create_dict(name, numbers)
+    print("Dictionary:", d_data)
+
+    sorted_array = sort_by_val(name, numbers)
+    print("Sorted Array:", sorted_array)
